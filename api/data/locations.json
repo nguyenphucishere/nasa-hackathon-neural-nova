@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "name": "Hà Giang - Tam Giác Mạch",
+    "slug": "ha-giang-tam-giac-mach",
+    "aoi_name": "Ha_Giang_TamGiacMach",
+    "flower": {
+      "species": "tam_giac_mach",
+      "common_name": "Buckwheat",
+      "scientific_name": "Fagopyrum esculentum",
+      "local_name": "Tam Giác Mạch",
+      "color": "pink-white"
+    },
+    "location": {
+      "country": "Vietnam",
+      "region": "Northeast",
+      "province": "Ha Giang",
+      "latitude": 23.15,
+      "longitude": 105.2,
+      "elevation_min": 800,
+      "elevation_max": 1500
+    },
+    "bloom_season": {
+      "start_month": 9,
+      "start_day": 25,
+      "end_month": 12,
+      "end_day": 20,
+      "peak_months": [10, 11],
+      "duration_days": 60
+    },
+    "images": {
+      "hero": "/images/ha-giang-hero.jpg",
+      "gallery": []
+    },
+    "description": "Famous buckwheat flower fields covering the mountainous Ha Giang plateau",
+    "tips": [
+      "Book accommodation 2-3 months in advance",
+      "Best time for photography: Early morning (6-8 AM)",
+      "Bring warm clothes - mountain weather can be cold"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mộc Châu - Hoa Mận",
+    "slug": "moc-chau-prunus",
+    "aoi_name": "Moc_Chau_Prunus",
+    "flower": {
+      "species": "prunus_mume",
+      "common_name": "Plum Blossom",
+      "scientific_name": "Prunus mume",
+      "local_name": "Hoa Mận",
+      "color": "white-pink"
+    },
+    "location": {
+      "country": "Vietnam",
+      "region": "Northwest",
+      "province": "Son La",
+      "latitude": 20.86,
+      "longitude": 104.65,
+      "elevation_min": 1000,
+      "elevation_max": 1100
+    },
+    "bloom_season": {
+      "start_month": 1,
+      "start_day": 20,
+      "end_month": 2,
+      "end_day": 28,
+      "peak_months": [2],
+      "duration_days": 21
+    },
+    "images": {
+      "hero": "/images/moc-chau-hero.jpg",
+      "gallery": []
+    },
+    "description": "White plum blossoms in Moc Chau plateau",
+    "tips": [
+      "Visit during Tet holiday",
+      "Cool weather, bring jacket"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Fansipan - Đỗ Quyên",
+    "slug": "hoang-lien-rhododendron",
+    "aoi_name": "Hoang_Lien_Rhododendron",
+    "flower": {
+      "species": "rhododendron_spp",
+      "common_name": "Rhododendron",
+      "scientific_name": "Rhododendron spp.",
+      "local_name": "Đỗ Quyên",
+      "color": "red-purple-pink"
+    },
+    "location": {
+      "country": "Vietnam",
+      "region": "Northwest",
+      "province": "Lao Cai",
+      "latitude": 22.3,
+      "longitude": 103.8,
+      "elevation_min": 1500,
+      "elevation_max": 3200
+    },
+    "bloom_season": {
+      "start_month": 2,
+      "start_day": 25,
+      "end_month": 5,
+      "end_day": 31,
+      "peak_months": [4],
+      "duration_days": 90
+    },
+    "images": {
+      "hero": "/images/fansipan-hero.jpg",
+      "gallery": []
+    },
+    "description": "Red rhododendron flowers on Vietnam's highest peak",
+    "tips": [
+      "Take cable car to summit",
+      "High altitude - prepare for thin air"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Lào Cai - Đỗ Quyên",
+    "slug": "lao-cai-rhododendron",
+    "aoi_name": "Lao_Cai_Rhododendron",
+    "flower": {
+      "species": "rhododendron_spp",
+      "common_name": "Rhododendron",
+      "scientific_name": "Rhododendron spp.",
+      "local_name": "Đỗ Quyên",
+      "color": "red-purple-pink"
+    },
+    "location": {
+      "country": "Vietnam",
+      "region": "Northwest",
+      "province": "Lao Cai",
+      "latitude": 22.26,
+      "longitude": 103.93,
+      "elevation_min": 2000,
+      "elevation_max": 3400
+    },
+    "bloom_season": {
+      "start_month": 3,
+      "start_day": 1,
+      "end_month": 6,
+      "end_day": 15,
+      "peak_months": [4],
+      "duration_days": 90
+    },
+    "images": {
+      "hero": "/images/lao-cai-hero.jpg",
+      "gallery": []
+    },
+    "description": "Rhododendron forests in high mountains of Lao Cai",
+    "tips": [
+      "Trekking required - hire local guide",
+      "Camping recommended"
+    ]
+  }
+]

@@ -1,0 +1,565 @@
+openapi: 3.0.0
+info:
+  title: Flower Forecast API
+  description: Flower Bloom Forecasting & Travel Recommendation System
+  version: 1.0.0
+  contact:
+    name: Neural Nova Team
+    email: support@flowerforecast.com
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Development server
+  - url: https://api.flowerforecast.com/api/v1
+    description: Production server
+
+tags:
+  - name: Locations
+    description: Flower locations endpoints
+  - name: Forecast
+    description: Bloom forecast endpoints
+  - name: Search
+    description: Search and recommendation endpoints
+
+paths:
+  /locations:
+    get:
+      tags:
+        - Locations
+      summary: Get all locations
+      description: Retrieve all available flower bloom locations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Locations retrieved successfully
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Location'
+                  timestamp:
+                    type: string
+                    format: date-time
+
+  /locations/{slug}:
+    get:
+      tags:
+        - Locations
+      summary: Get location by slug
+      description: Retrieve detailed information for a specific location
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: Location slug (e.g., ha-giang-tam-giac-mach)
+          schema:
+            type: string
+            example: ha-giang-tam-giac-mach
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/Location'
+        '404':
+          description: Location not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /search:
+    post:
+      tags:
+        - Search
+      summary: Search for locations
+      description: Search for flower locations based on criteria (location, date, month, flower)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location:
+                  type: string
+                  nullable: true
+                  description: Location slug or null for any
+                  example: ha-giang-tam-giac-mach
+                date:
+                  type: string
+                  format: date
+                  nullable: true
+                  description: Specific date (YYYY-MM-DD) or null
+                  example: 2025-10-15
+                month:
+                  type: integer
+                  minimum: 1
+                  maximum: 12
+                  nullable: true
+                  description: Month (1-12) or null
+                  example: 10
+                year:
+                  type: integer
+                  minimum: 2015
+                  maximum: 2030
+                  description: Year
+                  example: 2025
+                flower:
+                  type: string
+                  nullable: true
+                  description: Flower species or null for any
+                  example: tam_giac_mach
+                max_results:
+                  type: integer
+                  minimum: 1
+                  maximum: 20
+                  description: Maximum number of results
+                  example: 5
+            examples:
+              search_by_month:
+                summary: Search by month
+                value:
+                  location: null
+                  month: 10
+                  year: 2025
+                  flower: null
+                  max_results: 5
+              search_by_date:
+                summary: Search by specific date
+                value:
+                  location: ha-giang-tam-giac-mach
+                  date: 2025-10-15
+      responses:
+        '200':
+          description: Search completed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      query:
+                        type: object
+                      matches:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/SearchMatch'
+                      summary:
+                        type: object
+                        properties:
+                          total_matches:
+                            type: integer
+                          excellent:
+                            type: integer
+                          good:
+                            type: integer
+                          fair:
+                            type: integer
+                          poor:
+                            type: integer
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /forecast/{location_slug}/{date}:
+    get:
+      tags:
+        - Forecast
+      summary: Get forecast for specific date
+      description: Get bloom probability forecast for a specific location and date
+      parameters:
+        - name: location_slug
+          in: path
+          required: true
+          schema:
+            type: string
+          example: ha-giang-tam-giac-mach
+        - name: date
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+          example: 2025-10-15
+      responses:
+        '200':
+          description: Forecast retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/Forecast'
+        '404':
+          description: Location not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /forecast/{location_slug}/range:
+    get:
+      tags:
+        - Forecast
+      summary: Get forecast for date range
+      description: Get bloom forecasts for a range of dates
+      parameters:
+        - name: location_slug
+          in: path
+          required: true
+          schema:
+            type: string
+          example: ha-giang-tam-giac-mach
+        - name: start
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+          example: 2025-10-01
+        - name: end
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+          example: 2025-10-31
+      responses:
+        '200':
+          description: Forecast range retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      location:
+                        type: string
+                      range:
+                        type: object
+                        properties:
+                          start:
+                            type: string
+                            format: date
+                          end:
+                            type: string
+                            format: date
+                      forecasts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            date:
+                              type: string
+                              format: date
+                            probability:
+                              type: number
+                              format: float
+                            confidence:
+                              type: string
+                            in_season:
+                              type: boolean
+                      peak_date:
+                        type: object
+                        properties:
+                          date:
+                            type: string
+                          probability:
+                            type: number
+
+  /forecast/hotspots/{location_slug}/{date}:
+    get:
+      tags:
+        - Forecast
+      summary: Get hotspots for specific date
+      description: Get high-probability bloom areas (hotspots) for a specific date
+      parameters:
+        - name: location_slug
+          in: path
+          required: true
+          schema:
+            type: string
+          example: ha-giang-tam-giac-mach
+        - name: date
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+          example: 2025-10-15
+      responses:
+        '200':
+          description: Hotspots retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      location:
+                        type: string
+                      date:
+                        type: string
+                      hotspots_count:
+                        type: integer
+                      hotspots:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Hotspot'
+
+components:
+  schemas:
+    Location:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Hà Giang - Tam Giác Mạch
+        slug:
+          type: string
+          example: ha-giang-tam-giac-mach
+        flower:
+          type: object
+          properties:
+            species:
+              type: string
+              example: tam_giac_mach
+            common_name:
+              type: string
+              example: Buckwheat
+            scientific_name:
+              type: string
+              example: Fagopyrum esculentum
+            local_name:
+              type: string
+              example: Tam Giác Mạch
+            color:
+              type: string
+              example: pink-white
+        location:
+          type: object
+          properties:
+            country:
+              type: string
+              example: Vietnam
+            region:
+              type: string
+              example: Northeast
+            province:
+              type: string
+              example: Ha Giang
+            latitude:
+              type: number
+              format: float
+              example: 23.15
+            longitude:
+              type: number
+              format: float
+              example: 105.2
+            elevation_min:
+              type: integer
+              example: 800
+            elevation_max:
+              type: integer
+              example: 1500
+        bloom_season:
+          type: object
+          properties:
+            start:
+              type: string
+              example: "9/25"
+            end:
+              type: string
+              example: "12/20"
+            peak_months:
+              type: array
+              items:
+                type: integer
+              example: [10, 11]
+            duration_days:
+              type: integer
+              example: 60
+        description:
+          type: string
+        images:
+          type: object
+          properties:
+            hero:
+              type: string
+
+    SearchMatch:
+      type: object
+      properties:
+        rank:
+          type: integer
+          example: 1
+        location:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            slug:
+              type: string
+            flower:
+              type: object
+            coordinates:
+              type: object
+              properties:
+                latitude:
+                  type: number
+                longitude:
+                  type: number
+        match_score:
+          type: integer
+          example: 100
+        in_season:
+          type: boolean
+          example: true
+        best_dates:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+              probability:
+                type: number
+              confidence:
+                type: string
+              label:
+                type: string
+        season_info:
+          type: object
+        recommendation:
+          type: object
+          properties:
+            verdict:
+              type: string
+              enum: [excellent, good, fair, poor]
+            message:
+              type: string
+            tips:
+              type: array
+              items:
+                type: string
+
+    Forecast:
+      type: object
+      properties:
+        location:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            slug:
+              type: string
+        date:
+          type: string
+          format: date
+        in_season:
+          type: boolean
+        forecast:
+          type: object
+          properties:
+            probability:
+              type: number
+              format: float
+              example: 0.87
+            confidence:
+              type: string
+              enum: [high, medium, low]
+            status:
+              type: string
+            model_used:
+              type: string
+
+    Hotspot:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: float
+          example: 23.15
+        longitude:
+          type: number
+          format: float
+          example: 105.2
+        probability:
+          type: number
+          format: float
+          example: 0.95
+        gi_z_score:
+          type: number
+          format: float
+          example: 3.45
+        cluster_id:
+          type: integer
+          example: 1
+
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: object
+        timestamp:
+          type: string
+          format: date-time
