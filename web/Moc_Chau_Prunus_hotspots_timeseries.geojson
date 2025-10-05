@@ -1,0 +1,1415 @@
+{
+  "type": "FeatureCollection",
+  "name": "Moc_Chau_Prunus_hotspots_timeseries",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "id": "239",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.85714285714288,
+        "lat": 20.644927325279586,
+        "bloom_probability": 0.5067750815252556,
+        "date": "2025-10-05",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.85714285714288,
+          20.644927325279586
+        ]
+      }
+    },
+    {
+      "id": "432",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.75714285714287,
+        "lat": 20.689854650559198,
+        "bloom_probability": 0.5111849224926919,
+        "date": "2025-10-05",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.75714285714287,
+          20.689854650559198
+        ]
+      }
+    },
+    {
+      "id": "1817",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.54285714285716,
+        "lat": 21.004345927516468,
+        "bloom_probability": 0.5126061105459592,
+        "date": "2025-10-05",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.54285714285716,
+          21.00434592751647
+        ]
+      }
+    },
+    {
+      "id": "618",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.55714285714286,
+        "lat": 20.734781975838807,
+        "bloom_probability": 0.5332770846652265,
+        "date": "2025-10-06",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.55714285714286,
+          20.734781975838803
+        ]
+      }
+    },
+    {
+      "id": "784",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.7857142857143,
+        "lat": 20.768477469798516,
+        "bloom_probability": 0.5020938655849573,
+        "date": "2025-10-06",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.7857142857143,
+          20.768477469798516
+        ]
+      }
+    },
+    {
+      "id": "1345",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.94285714285715,
+        "lat": 20.892027614317442,
+        "bloom_probability": 0.5345474712201852,
+        "date": "2025-10-06",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.94285714285715,
+          20.89202761431744
+        ]
+      }
+    },
+    {
+      "id": "185",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.80000000000001,
+        "lat": 20.633695493959685,
+        "bloom_probability": 0.5037407027814201,
+        "date": "2025-10-07",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.80000000000001,
+          20.633695493959685
+        ]
+      }
+    },
+    {
+      "id": "254",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.35714285714288,
+        "lat": 20.65615915659949,
+        "bloom_probability": 0.5155065980294182,
+        "date": "2025-10-07",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.35714285714288,
+          20.656159156599493
+        ]
+      }
+    },
+    {
+      "id": "726",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.67142857142858,
+        "lat": 20.75724563847861,
+        "bloom_probability": 0.5347091372122909,
+        "date": "2025-10-07",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.67142857142858,
+          20.75724563847861
+        ]
+      }
+    },
+    {
+      "id": "985",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.80000000000001,
+        "lat": 20.813404795078124,
+        "bloom_probability": 0.5112286331199127,
+        "date": "2025-10-07",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.80000000000001,
+          20.813404795078128
+        ]
+      }
+    },
+    {
+      "id": "1037",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.82857142857144,
+        "lat": 20.824636626398025,
+        "bloom_probability": 0.5180467333384586,
+        "date": "2025-10-09",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.82857142857144,
+          20.824636626398025
+        ]
+      }
+    },
+    {
+      "id": "1359",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.42857142857144,
+        "lat": 20.903259445637342,
+        "bloom_probability": 0.5002406514019635,
+        "date": "2025-10-09",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.42857142857146,
+          20.903259445637342
+        ]
+      }
+    },
+    {
+      "id": "157",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.4,
+        "lat": 20.633695493959685,
+        "bloom_probability": 0.5007652615751954,
+        "date": "2025-10-10",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.4,
+          20.63369549395969
+        ]
+      }
+    },
+    {
+      "id": "722",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.61428571428573,
+        "lat": 20.75724563847861,
+        "bloom_probability": 0.5003479188894304,
+        "date": "2025-10-10",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.61428571428573,
+          20.757245638478608
+        ]
+      }
+    },
+    {
+      "id": "1115",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.51428571428572,
+        "lat": 20.847100289037833,
+        "bloom_probability": 0.5006159284351576,
+        "date": "2025-10-10",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.51428571428572,
+          20.847100289037837
+        ]
+      }
+    },
+    {
+      "id": "573",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.62857142857145,
+        "lat": 20.723550144518903,
+        "bloom_probability": 0.5111954790031629,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.62857142857145,
+          20.7235501445189
+        ]
+      }
+    },
+    {
+      "id": "737",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.82857142857144,
+        "lat": 20.75724563847861,
+        "bloom_probability": 0.506574332333453,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.82857142857144,
+          20.75724563847861
+        ]
+      }
+    },
+    {
+      "id": "1333",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.77142857142859,
+        "lat": 20.892027614317442,
+        "bloom_probability": 0.5045602085529708,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.77142857142859,
+          20.892027614317442
+        ]
+      }
+    },
+    {
+      "id": "1394",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.92857142857144,
+        "lat": 20.903259445637342,
+        "bloom_probability": 0.5204001499343397,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.92857142857144,
+          20.90325944563734
+        ]
+      }
+    },
+    {
+      "id": "2222",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.61428571428573,
+        "lat": 21.094200578075686,
+        "bloom_probability": 0.5030657169972718,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.61428571428573,
+          21.09420057807569
+        ]
+      }
+    },
+    {
+      "id": "2250",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.30000000000001,
+        "lat": 21.10543240939559,
+        "bloom_probability": 0.5097211678960217,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.30000000000001,
+          21.105432409395586
+        ]
+      }
+    },
+    {
+      "id": "2439",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.85714285714288,
+        "lat": 21.139127903355295,
+        "bloom_probability": 0.5074339042025007,
+        "date": "2025-10-11",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.85714285714288,
+          21.139127903355288
+        ]
+      }
+    },
+    {
+      "id": "347",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.97142857142859,
+        "lat": 20.66739098791939,
+        "bloom_probability": 0.5371969002945081,
+        "date": "2025-10-12",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.97142857142859,
+          20.667390987919394
+        ]
+      }
+    },
+    {
+      "id": "1449",
+      "type": "Feature",
+      "properties": {
+        "lon": 105.00000000000001,
+        "lat": 20.914491276957246,
+        "bloom_probability": 0.5347481138332304,
+        "date": "2025-10-12",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.00000000000001,
+          20.91449127695725
+        ]
+      }
+    },
+    {
+      "id": "272",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.61428571428573,
+        "lat": 20.65615915659949,
+        "bloom_probability": 0.5488522432692291,
+        "date": "2025-10-13",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.61428571428573,
+          20.656159156599493
+        ]
+      }
+    },
+    {
+      "id": "1443",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.91428571428573,
+        "lat": 20.914491276957246,
+        "bloom_probability": 0.5439361718892811,
+        "date": "2025-10-13",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.91428571428573,
+          20.91449127695725
+        ]
+      }
+    },
+    {
+      "id": "1608",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.41428571428573,
+        "lat": 20.959418602236855,
+        "bloom_probability": 0.556101939823564,
+        "date": "2025-10-13",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.41428571428573,
+          20.959418602236855
+        ]
+      }
+    },
+    {
+      "id": "1859",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.42857142857144,
+        "lat": 21.01557775883637,
+        "bloom_probability": 0.5052243596035624,
+        "date": "2025-10-13",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.42857142857146,
+          21.01557775883637
+        ]
+      }
+    },
+    {
+      "id": "1735",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.80000000000001,
+        "lat": 20.98188226487666,
+        "bloom_probability": 0.5023010685929127,
+        "date": "2025-10-14",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.80000000000001,
+          20.98188226487666
+        ]
+      }
+    },
+    {
+      "id": "626",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.67142857142858,
+        "lat": 20.734781975838807,
+        "bloom_probability": 0.5055672544207523,
+        "date": "2025-10-15",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.67142857142858,
+          20.734781975838803
+        ]
+      }
+    },
+    {
+      "id": "1852",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.32857142857144,
+        "lat": 21.01557775883637,
+        "bloom_probability": 0.5515960083291435,
+        "date": "2025-10-15",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.32857142857144,
+          21.015577758836365
+        ]
+      }
+    },
+    {
+      "id": "634",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.7857142857143,
+        "lat": 20.734781975838807,
+        "bloom_probability": 0.5212006581147727,
+        "date": "2025-10-16",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.7857142857143,
+          20.734781975838807
+        ]
+      }
+    },
+    {
+      "id": "1100",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.30000000000001,
+        "lat": 20.847100289037833,
+        "bloom_probability": 0.5392737736840618,
+        "date": "2025-10-16",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.30000000000001,
+          20.847100289037833
+        ]
+      }
+    },
+    {
+      "id": "1309",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.42857142857144,
+        "lat": 20.892027614317442,
+        "bloom_probability": 0.5080560973012652,
+        "date": "2025-10-16",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.42857142857146,
+          20.892027614317442
+        ]
+      }
+    },
+    {
+      "id": "1605",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.37142857142858,
+        "lat": 20.959418602236855,
+        "bloom_probability": 0.5099876847415069,
+        "date": "2025-10-19",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.37142857142858,
+          20.959418602236855
+        ]
+      }
+    },
+    {
+      "id": "1945",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.94285714285715,
+        "lat": 21.026809590156272,
+        "bloom_probability": 0.531761148199225,
+        "date": "2025-10-19",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.94285714285715,
+          21.02680959015627
+        ]
+      }
+    },
+    {
+      "id": "2279",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.71428571428572,
+        "lat": 21.10543240939559,
+        "bloom_probability": 0.5354861288918669,
+        "date": "2025-10-19",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.71428571428572,
+          21.10543240939558
+        ]
+      }
+    },
+    {
+      "id": "2320",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.5857142857143,
+        "lat": 21.11666424071549,
+        "bloom_probability": 0.5176046882125386,
+        "date": "2025-10-19",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.58571428571432,
+          21.11666424071549
+        ]
+      }
+    },
+    {
+      "id": "2498",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.9857142857143,
+        "lat": 21.1503597346752,
+        "bloom_probability": 0.5133929321871671,
+        "date": "2025-10-19",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9857142857143,
+          21.150359734675195
+        ]
+      }
+    },
+    {
+      "id": "1673",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.62857142857145,
+        "lat": 20.97065043355676,
+        "bloom_probability": 0.5297282362268914,
+        "date": "2025-10-20",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.62857142857145,
+          20.970650433556756
+        ]
+      }
+    },
+    {
+      "id": "2148",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.9857142857143,
+        "lat": 21.07173691543588,
+        "bloom_probability": 0.5655613159996036,
+        "date": "2025-10-21",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9857142857143,
+          21.071736915435885
+        ]
+      }
+    },
+    {
+      "id": "207",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.4,
+        "lat": 20.644927325279586,
+        "bloom_probability": 0.506888824872282,
+        "date": "2025-10-22",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.4,
+          20.644927325279586
+        ]
+      }
+    },
+    {
+      "id": "1115",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.51428571428572,
+        "lat": 20.847100289037833,
+        "bloom_probability": 0.5088096217369914,
+        "date": "2025-10-22",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.51428571428572,
+          20.847100289037837
+        ]
+      }
+    },
+    {
+      "id": "2360",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.44285714285715,
+        "lat": 21.127896072035394,
+        "bloom_probability": 0.5021126045371576,
+        "date": "2025-10-22",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.44285714285715,
+          21.127896072035394
+        ]
+      }
+    },
+    {
+      "id": "937",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.82857142857144,
+        "lat": 20.80217296375822,
+        "bloom_probability": 0.5318405363803387,
+        "date": "2025-10-23",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.82857142857144,
+          20.80217296375822
+        ]
+      }
+    },
+    {
+      "id": "1480",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.72857142857144,
+        "lat": 20.92572310827715,
+        "bloom_probability": 0.5197053979580443,
+        "date": "2025-10-23",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.72857142857144,
+          20.925723108277147
+        ]
+      }
+    },
+    {
+      "id": "233",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.77142857142859,
+        "lat": 20.644927325279586,
+        "bloom_probability": 0.5234445136646892,
+        "date": "2025-10-24",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.77142857142859,
+          20.644927325279582
+        ]
+      }
+    },
+    {
+      "id": "718",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.55714285714286,
+        "lat": 20.75724563847861,
+        "bloom_probability": 0.513396938084812,
+        "date": "2025-10-24",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.55714285714286,
+          20.757245638478608
+        ]
+      }
+    },
+    {
+      "id": "992",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.90000000000002,
+        "lat": 20.813404795078124,
+        "bloom_probability": 0.5254851604374082,
+        "date": "2025-10-25",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.90000000000002,
+          20.813404795078124
+        ]
+      }
+    },
+    {
+      "id": "1558",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.41428571428573,
+        "lat": 20.948186770916955,
+        "bloom_probability": 0.5285599923104272,
+        "date": "2025-10-26",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.41428571428573,
+          20.948186770916955
+        ]
+      }
+    },
+    {
+      "id": "448",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.9857142857143,
+        "lat": 20.689854650559198,
+        "bloom_probability": 0.5422871179966511,
+        "date": "2025-10-27",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9857142857143,
+          20.689854650559198
+        ]
+      }
+    },
+    {
+      "id": "570",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.5857142857143,
+        "lat": 20.723550144518903,
+        "bloom_probability": 0.5142391546547633,
+        "date": "2025-10-27",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.58571428571432,
+          20.7235501445189
+        ]
+      }
+    },
+    {
+      "id": "785",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.80000000000001,
+        "lat": 20.768477469798516,
+        "bloom_probability": 0.5512871871069631,
+        "date": "2025-10-27",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.80000000000001,
+          20.76847746979852
+        ]
+      }
+    },
+    {
+      "id": "1084",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.7857142857143,
+        "lat": 20.83586845771793,
+        "bloom_probability": 0.5295509217751657,
+        "date": "2025-10-29",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.7857142857143,
+          20.83586845771793
+        ]
+      }
+    },
+    {
+      "id": "1729",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.71428571428572,
+        "lat": 20.98188226487666,
+        "bloom_probability": 0.5066246239687219,
+        "date": "2025-10-29",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.71428571428572,
+          20.981882264876663
+        ]
+      }
+    },
+    {
+      "id": "1189",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.85714285714288,
+        "lat": 20.858332120357733,
+        "bloom_probability": 0.5018387681290395,
+        "date": "2025-10-30",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.85714285714288,
+          20.858332120357737
+        ]
+      }
+    },
+    {
+      "id": "1143",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.91428571428573,
+        "lat": 20.847100289037833,
+        "bloom_probability": 0.5289571594194461,
+        "date": "2025-10-31",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.91428571428573,
+          20.84710028903783
+        ]
+      }
+    },
+    {
+      "id": "1006",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.3857142857143,
+        "lat": 20.824636626398025,
+        "bloom_probability": 0.5184400310428127,
+        "date": "2025-11-01",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.3857142857143,
+          20.824636626398025
+        ]
+      }
+    },
+    {
+      "id": "1621",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.60000000000001,
+        "lat": 20.959418602236855,
+        "bloom_probability": 0.5091931639395859,
+        "date": "2025-11-02",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.60000000000001,
+          20.95941860223686
+        ]
+      }
+    },
+    {
+      "id": "1793",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.91428571428573,
+        "lat": 20.993114096196564,
+        "bloom_probability": 0.5034554230397742,
+        "date": "2025-11-02",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.91428571428573,
+          20.99311409619656
+        ]
+      }
+    },
+    {
+      "id": "683",
+      "type": "Feature",
+      "properties": {
+        "lon": 104.77142857142859,
+        "lat": 20.746013807158707,
+        "bloom_probability": 0.5099974280457076,
+        "date": "2025-11-03",
+        "gi_star_z": null,
+        "gi_star_p": null,
+        "gi_star_significant": false,
+        "hotspot_type": "Error",
+        "cluster_id": -1,
+        "is_noise": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.77142857142859,
+          20.746013807158704
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,611 @@
+# Bloom Forecasting Configuration
+project_name: "Hyperspectral Bloom Forecasting"
+version: "1.0.0"
+
+# AOI Definitions
+aois:
+  - name: "Ha_Giang_TamGiacMach"
+    species: "tam_giac_mach"
+    common_name: "Buckwheat"
+    scientific_name: "Fagopyrum esculentum"
+    country: "VNM"
+    geometry:
+      type: "Polygon"
+      # Toàn tỉnh Hà Giang - expanded to full province level (~7,900 km²)
+      coordinates: [[[104.5, 23.35], [105.6, 23.35], [105.6, 22.70], [104.5, 22.70], [104.5, 23.35]]]
+    bloom_window:
+      start: [9, 25]  # month, day
+      end: [12, 20]
+    peak_months: [10, 11]
+    duration_days: 60
+    elevation_range: [800, 1500]  # meters
+    notes: "Province-level coverage: Entire Ha Giang province for comprehensive buckwheat bloom detection"
+    
+  - name: "Moc_Chau_Prunus"
+    species: "prunus_mume"
+    common_name: "Plum Blossom"
+    scientific_name: "Prunus mume"
+    country: "VNM"
+    geometry:
+      type: "Polygon"
+      # Toàn huyện Mộc Châu - expanded to district level (~2,025 km²)
+      coordinates: [[[104.3, 21.15], [105.0, 21.15], [105.0, 20.60], [104.3, 20.60], [104.3, 21.15]]]
+    bloom_window:
+      start: [1, 20]  # Cuối tháng 1 (tháng 1 âm lịch)
+      end: [2, 28]    # Cuối tháng 2
+    peak_months: [2]  # Tháng 2 là thời điểm đẹp nhất
+    peak_duration_days: 10  # 7-10 ngày nở rộ
+    duration_days: 21  # 2-3 tuần tổng cộng
+    elevation_range: [1000, 1100]  # Mộc Châu ~1050m
+    temperature_range: [10, 22]  # °C
+    land_type: "agricultural"  # Vườn trồng
+    notes: "District-level coverage: Entire Moc Chau district for plum blossom valleys"
+    
+  - name: "Hoang_Lien_Rhododendron"
+    species: "rhododendron_spp"
+    common_name: "Rhododendron (Đỗ Quyên)"
+    scientific_name: "Rhododendron spp."
+    country: "VNM"
+    geometry:
+      type: "Polygon"
+      # Toàn dãy Hoàng Liên Sơn - expanded to mountain range (~3,145 km²)
+      coordinates: [[[103.5, 22.55], [104.1, 22.55], [104.1, 22.10], [103.5, 22.10], [103.5, 22.55]]]
+    bloom_window:
+      start: [2, 25]  # Cuối tháng 2
+      end: [5, 31]    # Hết tháng 5
+    peak_months: [4]  # Tháng 4
+    duration_days: 90  # Kéo dài vài tuần đến vài tháng
+    elevation_range: [1500, 3200]  # Núi cao
+    temperature_range: [15, 25]  # °C
+    soil_ph_range: [4.2, 6.0]  # Đất chua
+    land_type: "natural_forest"  # Rừng tự nhiên
+    light_preference: "shade_tolerant"  # Ưa bóng râm
+    notes: "Mountain range coverage: Entire Hoang Lien Son range including Fansipan peak"
+    
+  - name: "Lao_Cai_Rhododendron"
+    species: "rhododendron_spp"
+    common_name: "Rhododendron (Đỗ Quyên)"
+    scientific_name: "Rhododendron spp."
+    country: "VNM"
+    geometry:
+      type: "Polygon"
+      # Toàn tỉnh Lào Cai - expanded to full province (~6,364 km²)
+      coordinates: [[[103.5, 22.65], [104.5, 22.65], [104.5, 22.00], [103.5, 22.00], [103.5, 22.65]]]
+    bloom_window:
+      start: [3, 1]   # Đầu tháng 3
+      end: [6, 15]    # Giữa tháng 6
+    peak_months: [4]  # Tháng 4
+    duration_days: 90
+    elevation_range: [2000, 3400]  # Putaleng cao hơn
+    temperature_range: [15, 25]
+    soil_ph_range: [4.2, 6.0]
+    land_type: "natural_forest"
+    light_preference: "shade_tolerant"
+    notes: "Province-level coverage: Entire Lao Cai province including Putaleng mountain"
+    
+  # ========== JAPAN AOIS ==========
+  - name: "Tokyo_Ueno_Somei_Yoshino"
+    species: "somei_yoshino"
+    common_name: "Yoshino Cherry (Somei Yoshino)"
+    scientific_name: "Prunus × yedoensis"
+    country: "JPN"
+    geometry:
+      type: "Polygon"
+      # Toàn Tokyo Metropolis - expanded to greater Tokyo area (~2,194 km²)
+      coordinates: [[[139.50, 35.85], [139.95, 35.85], [139.95, 35.50], [139.50, 35.50], [139.50, 35.85]]]
+    bloom_window:
+      start: [3, 20]  # March 20
+      end: [4, 10]    # April 10
+    peak_months: [3, 4]  # Late March to early April
+    duration_days: 20
+    elevation_range: [0, 50]  # Urban area, near sea level
+    temperature_range: [5, 20]  # °C
+    temperature_accumulation_rule: 600  # 600°C rule for sakura
+    land_type: "urban_park"
+    notes: "Metropolitan coverage: Greater Tokyo area including Ueno Park (JMA standard site), Sumida River, Chidorigafuchi. 600°C accumulation from Feb 1."
+    
+  - name: "Kyoto_Philosopher_Somei_Yoshino"
+    species: "somei_yoshino"
+    common_name: "Yoshino Cherry (Somei Yoshino)"
+    scientific_name: "Prunus × yedoensis"
+    country: "JPN"
+    geometry:
+      type: "Polygon"
+      # Toàn Kyoto city area - expanded to city level (~827 km²)
+      coordinates: [[[135.60, 35.20], [135.95, 35.20], [135.95, 34.90], [135.60, 34.90], [135.60, 35.20]]]
+    bloom_window:
+      start: [3, 25]  # March 25
+      end: [4, 15]    # April 15
+    peak_months: [4]  # Early April
+    duration_days: 20
+    elevation_range: [50, 100]  # Low hills
+    temperature_range: [5, 20]  # °C
+    temperature_accumulation_rule: 600
+    land_type: "urban_park"
+    notes: "City-level coverage: Greater Kyoto area including Philosopher's Path, Maruyama Park, Kiyomizu-dera. Blooms 3-5 days after Tokyo."
+    
+  - name: "Kawazu_Kawazu_Zakura"
+    species: "kawazu_zakura"
+    common_name: "Kawazu Cherry (Kawazu Zakura)"
+    scientific_name: "Prunus × kanzakura 'Kawazu-zakura'"
+    country: "JPN"
+    geometry:
+      type: "Polygon"
+      # Toàn khu vực Izu Peninsula - expanded to Izu region (~1,421 km²)
+      coordinates: [[[138.70, 34.95], [139.15, 34.95], [139.15, 34.60], [138.70, 34.60], [138.70, 34.95]]]
+    bloom_window:
+      start: [2, 5]   # February 5
+      end: [3, 10]    # March 10
+    peak_months: [2]  # February
+    duration_days: 33
+    elevation_range: [0, 100]  # Coastal area
+    temperature_range: [3, 15]  # °C
+    land_type: "riverside"
+    notes: "Regional coverage: Entire Izu Peninsula including Kawazu River (8,000+ trees). Earliest cherry blossom in Japan, 30-day bloom attracts 1M+ visitors."
+    
+  # ========== NETHERLANDS AOIS ==========
+  - name: "Keukenhof_Darwin_Tulip"
+    species: "tulipa_darwin_hybrid"
+    common_name: "Darwin Hybrid Tulip"
+    scientific_name: "Tulipa gesneriana"
+    country: "NLD"
+    geometry:
+      type: "Polygon"
+      # Toàn vùng South Holland - expanded to province level (~3,419 km²)
+      coordinates: [[[4.15, 52.20], [4.75, 52.20], [4.75, 51.75], [4.15, 51.75], [4.15, 52.20]]]
+    bloom_window:
+      start: [4, 1]   # April 1
+      end: [5, 15]    # May 15
+    peak_months: [4]  # April
+    duration_days: 45
+    elevation_range: [-5, 5]  # Below/near sea level
+    temperature_range: [5, 18]  # °C
+    land_type: "botanical_garden"
+    notes: "Province coverage: South Holland tulip region including Keukenhof Gardens (7M bulbs, 800+ varieties), Lisse, Noordwijk. Open mid-March to mid-May."
+    
+  - name: "North_Holland_Tulip_Fields"
+    species: "tulipa_darwin_hybrid"
+    common_name: "Darwin Hybrid Tulip"
+    scientific_name: "Tulipa gesneriana"
+    country: "NLD"
+    geometry:
+      type: "Polygon"
+      # Toàn vùng North Holland - expanded to province level (~4,092 km²)
+      coordinates: [[[4.60, 53.00], [5.20, 53.00], [5.20, 52.50], [4.60, 52.50], [4.60, 53.00]]]
+    bloom_window:
+      start: [4, 10]  # April 10
+      end: [5, 10]    # May 10
+    peak_months: [4, 5]  # Late April to early May
+    duration_days: 30
+    elevation_range: [-5, 5]  # Below/near sea level
+    temperature_range: [5, 18]  # °C
+    land_type: "commercial_field"
+    notes: "Province coverage: North Holland tulip region including Hollands Kroon, Anna Paulowna, commercial fields. Blooms slightly later than South Holland. 40km+ cycling routes."
+    
+  - name: "Keukenhof_Hyacinth"
+    species: "hyacinthus_orientalis"
+    common_name: "Common Hyacinth"
+    scientific_name: "Hyacinthus orientalis"
+    country: "NLD"
+    geometry:
+      type: "Polygon"
+      # Same as South Holland tulip region
+      coordinates: [[[4.15, 52.20], [4.75, 52.20], [4.75, 51.75], [4.15, 51.75], [4.15, 52.20]]]
+    bloom_window:
+      start: [3, 15]  # March 15
+      end: [4, 25]    # April 25
+    peak_months: [3, 4]  # Late March to early April
+    duration_days: 40
+    elevation_range: [-5, 5]  # Below/near sea level
+    temperature_range: [5, 18]  # °C
+    land_type: "botanical_garden"
+    notes: "Province coverage: South Holland hyacinth fields. Blooms earlier than tulips, fills Keukenhof and surrounding areas with fragrance in early spring."
+
+# Spectral Indices Configuration
+spectral_indices:
+  # ========== ANTHOCYANIN INDICES ==========
+  ARI:
+    name: "Anthocyanin Reflectance Index 1"
+    formula: "(1/B03) - (1/B05)"
+    bands: ["B3", "B5"]
+    target_pigment: "anthocyanin"
+    description: "Exploits absorption at green (~550nm) vs red (~700nm)"
+    
+  ARI2:
+    name: "Anthocyanin Reflectance Index 2"
+    formula: "B08 * ((1/B03) - (1/B05))"
+    bands: ["B8", "B3", "B5"]
+    target_pigment: "anthocyanin"
+    description: "Modified ARI1 using NIR to enhance signal"
+    
+  # ========== CAROTENOID INDICES ==========
+  CRI:
+    name: "Carotenoid Reflectance Index 1"
+    formula: "(1/B02) - (1/B03)"
+    bands: ["B2", "B3"]
+    target_pigment: "carotenoid"
+    description: "Measures difference between carotenoid (~510nm) and chlorophyll (~550nm) absorption"
+    
+  CRI2:
+    name: "Carotenoid Reflectance Index 2"
+    formula: "(1/B02) - (1/B05)"
+    bands: ["B2", "B5"]
+    target_pigment: "carotenoid"
+    description: "Alternative carotenoid index using red band"
+    
+  PSRI:
+    name: "Plant Senescence Reflectance Index"
+    formula: "(B04 - B03) / B06"
+    bands: ["B4", "B3", "B6"]
+    target_pigment: "carotenoid_chlorophyll_ratio"
+    description: "Maximizes sensitivity to carotenoid/chlorophyll ratio"
+    
+  # ========== CUSTOM FLOWER DETECTION ==========
+  SR_ANTHO:
+    name: "Simple Ratio Anthocyanin (Custom)"
+    formula: "B01 / B03"  # Using coastal aerosol as proxy for UV-A band
+    bands: ["B1", "B3"]
+    target_pigment: "anthocyanin"
+    description: "Based on R331/R581 from literature (R²=0.67); adapted to S2"
+    note: "B01 (443nm) approximates UV-A; B03 (560nm) approximates 581nm"
+    
+  SR_CARO:
+    name: "Simple Ratio Carotenoid (Custom)"
+    formula: "B01 / B04"
+    bands: ["B1", "B4"]
+    target_pigment: "carotenoid"
+    description: "Based on R331/R631 from literature (R²=0.68); adapted to S2"
+    note: "B01 (443nm) approximates UV-A; B04 (665nm) approximates 631nm"
+    
+  BLUE_RATIO:
+    name: "Blue Band Ratio (Rhododendron-specific)"
+    formula: "B02 / B04"
+    bands: ["B2", "B4"]
+    target_pigment: "mixed"
+    description: "Blue reflectance at 450nm shows 80% accuracy for Rhododendron flower/leaf separation"
+    
+  # ========== VEGETATION HEALTH INDICES ==========
+  NYI:
+    name: "Normalized Yellowing Index"
+    formula: "(NIR - Yellow) / (NIR + Yellow)"
+    bands: ["B8", "B3"]
+    target_pigment: "yellowing"
+    
+  NDVI:
+    name: "Normalized Difference Vegetation Index"
+    formula: "(NIR - Red) / (NIR + Red)"
+    bands: ["B8", "B4"]
+    target_pigment: "chlorophyll"
+    
+  EVI:
+    name: "Enhanced Vegetation Index"
+    formula: "2.5 * ((B08 - B04) / (B08 + 6*B04 - 7.5*B02 + 1))"
+    bands: ["B8", "B4", "B2"]
+    target_pigment: "chlorophyll"
+    
+  SAVI:
+    name: "Soil Adjusted Vegetation Index"
+    formula: "1.5 * ((B08 - B04) / (B08 + B04 + 0.5))"
+    bands: ["B8", "B4"]
+    target_pigment: "chlorophyll"
+    
+  NDRE:
+    name: "Normalized Difference Red Edge"
+    formula: "(B07 - B05) / (B07 + B05)"
+    bands: ["B7", "B5"]
+    target_pigment: "chlorophyll"
+    
+  IRECI:
+    name: "Inverted Red-Edge Chlorophyll Index"
+    formula: "(B07 - B04) / (B05 / B06)"
+    bands: ["B7", "B4", "B5", "B6"]
+    target_pigment: "chlorophyll"
+
+# Earth Engine Data Sources
+data_sources:
+  sentinel2:
+    collection: "COPERNICUS/S2_SR_HARMONIZED"
+    cloud_collection: "COPERNICUS/S2_CLOUD_PROBABILITY"
+    scale: 20
+    cloud_threshold: 40
+    
+  landsat:
+    collection: "LANDSAT/LC08/C02/T1_L2"
+    scale: 30
+    
+  climate:
+    temperature: "ECMWF/ERA5_LAND/DAILY_AGGR"
+    precipitation: "UCSB-CHG/CHIRPS/DAILY"
+
+# Model Configurations
+models:
+  # ========== BASELINE: SHALLOW LEARNING ==========
+  random_forest:
+    type: "shallow"
+    n_estimators: 200
+    max_depth: 20
+    min_samples_split: 5
+    n_jobs: -1
+    description: "Baseline model - good with small data, no spatial/temporal context"
+    use_case: "Initial classification, feature importance analysis"
+    
+  svm:
+    type: "shallow"
+    kernel: "rbf"
+    C: 1.0
+    gamma: "scale"
+    description: "Support Vector Machine - optimal decision boundaries"
+    use_case: "Alternative baseline for comparison with RF"
+    
+  # ========== DEEP LEARNING: TEMPORAL ==========
+  lstm:
+    type: "deep_temporal"
+    hidden_size: 128
+    num_layers: 3
+    dropout: 0.2
+    bidirectional: true
+    description: "Long Short-Term Memory - handles time series, irregular observations"
+    use_case: "Phenology curve modeling, cloud gap filling"
+    
+  gru:
+    type: "deep_temporal"
+    hidden_size: 128
+    num_layers: 3
+    dropout: 0.2
+    bidirectional: true
+    description: "Gated Recurrent Unit - faster than LSTM, similar performance"
+    use_case: "Efficient temporal modeling"
+    
+  # ========== DEEP LEARNING: SPATIAL ==========
+  cnn_1d:
+    type: "deep_spatial"
+    filters: [64, 128, 256]
+    kernel_size: 3
+    pool_size: 2
+    dropout: 0.3
+    description: "1D CNN for spectral profiles"
+    use_case: "Spectral feature extraction"
+    
+  cnn_2d:
+    type: "deep_spatial"
+    filters: [32, 64, 128]
+    kernel_size: [3, 3]
+    pool_size: [2, 2]
+    dropout: 0.3
+    description: "2D CNN for spatial patches"
+    use_case: "Spatial context from image patches"
+    
+  cnn_3d:
+    type: "deep_spatial_spectral"
+    filters: [16, 32, 64]
+    kernel_size: [3, 3, 3]
+    pool_size: [2, 2, 2]
+    dropout: 0.3
+    description: "3D CNN for hyperspectral cubes (x, y, λ)"
+    use_case: "Joint spatial-spectral feature learning"
+    
+  unet:
+    type: "deep_spatial"
+    encoder_filters: [32, 64, 128, 256]
+    decoder_filters: [128, 64, 32, 16]
+    description: "U-Net architecture for segmentation"
+    use_case: "Pixel-wise bloom probability mapping"
+    
+  resnet:
+    type: "deep_spatial"
+    blocks: [2, 2, 2, 2]
+    base_filters: 64
+    description: "Residual Network - deeper models without degradation"
+    use_case: "Complex spatial pattern recognition"
+    
+  # ========== DEEP LEARNING: HYBRID (OPTIMAL) ==========
+  cnn_lstm:
+    type: "deep_hybrid"
+    architecture: "sequential"
+    cnn_stage:
+      type: "2d"
+      filters: [64, 128, 256]
+      kernel_size: 3
+      pool_size: 2
+    lstm_stage:
+      hidden_size: 128
+      num_layers: 2
+      bidirectional: true
+    dropout: 0.3
+    description: "CNN extracts spatial features → LSTM models temporal evolution"
+    use_case: "Time series of image patches - RECOMMENDED for this project"
+    
+  cnn3d_lstm:
+    type: "deep_hybrid"
+    architecture: "sequential"
+    cnn_stage:
+      type: "3d"
+      filters: [32, 64, 128]
+      kernel_size: [3, 3, 3]
+      pool_size: [2, 2, 1]  # No pooling in spectral dimension
+    lstm_stage:
+      hidden_size: 128
+      num_layers: 2
+      bidirectional: true
+    dropout: 0.3
+    description: "3D-CNN extracts spatial-spectral features → LSTM models temporal"
+    use_case: "Time series of hyperspectral cubes - OPTIMAL for phenology"
+    
+  attention_lstm:
+    type: "deep_hybrid"
+    lstm_hidden: 128
+    lstm_layers: 2
+    attention_heads: 8
+    attention_dim: 64
+    dropout: 0.3
+    description: "LSTM with attention mechanism - focuses on critical time steps"
+    use_case: "Identifying peak bloom periods in long time series"
+    
+  transformer:
+    type: "deep_transformer"
+    d_model: 256
+    nhead: 8
+    num_layers: 6
+    dim_feedforward: 1024
+    dropout: 0.1
+    description: "Transformer architecture - state-of-the-art for sequences"
+    use_case: "Advanced temporal modeling with global context"
+
+# Training Configuration
+training:
+  batch_size: 32
+  epochs: 100
+  learning_rate: 0.001
+  validation_split: 0.2
+  early_stopping_patience: 15
+  reduce_lr_patience: 10
+  
+# Spatial Analysis
+spatial_analysis:
+  hotspot_threshold: 0.50  # 50% probability (lowered for more hotspots)
+  
+  # Getis-Ord Gi* spatial statistics
+  gi_star:
+    distance_band: 1000  # meters
+    permutations: 999
+    significance_level: 0.05
+    
+  # DBSCAN clustering
+  dbscan:
+    eps: 500  # meters - reduced for mountain terrain
+    min_samples: 5  # Reduced for more clusters
+    
+  # Spectral unmixing for mixed pixels
+  unmixing:
+    method: "linear"  # or "nonlinear"
+    endmembers:
+      - name: "flower_red"
+        description: "Red/pink flowers (high anthocyanin)"
+        reference_bands: ["B2", "B3", "B4", "B5"]
+      - name: "flower_white"
+        description: "White flowers (low pigments)"
+        reference_bands: ["B2", "B3", "B4", "B8"]
+      - name: "flower_yellow"
+        description: "Yellow flowers (high carotenoid)"
+        reference_bands: ["B1", "B2", "B3", "B4"]
+      - name: "green_vegetation"
+        description: "Healthy green leaves (high chlorophyll)"
+        reference_bands: ["B3", "B4", "B5", "B8"]
+      - name: "bare_soil"
+        description: "Exposed soil"
+        reference_bands: ["B2", "B4", "B11"]
+      - name: "shadow"
+        description: "Cloud/terrain shadow"
+        reference_bands: ["B2", "B3", "B4"]
+    min_fraction: 0.0
+    max_fraction: 1.0
+    sum_to_one: true
+    
+  # Phenology metrics extraction
+  phenology:
+    methods:
+      - name: "peak_detection"
+        description: "Identify bloom peak dates"
+        min_prominence: 0.1
+      - name: "onset_detection"
+        description: "Start of bloom season"
+        threshold_method: "derivative"  # or "threshold"
+        threshold_value: 0.3
+      - name: "offset_detection"
+        description: "End of bloom season"
+        threshold_method: "derivative"
+        threshold_value: 0.3
+      - name: "duration_calculation"
+        description: "Length of bloom period"
+      - name: "rate_of_change"
+        description: "Greening/browning rates"
+    
+# Environmental Constraints (for spatial prior)
+environmental_priors:
+  rhododendron:
+    elevation_min: 1500  # meters
+    elevation_max: 3500
+    slope_min: 10  # degrees
+    slope_max: 60
+    land_cover: ["forest", "shrubland"]
+    aspect_preference: ["north", "east"]  # Shade preference
+    soil_ph_min: 4.2
+    soil_ph_max: 6.0
+    
+  prunus:
+    elevation_min: 800
+    elevation_max: 1300
+    slope_min: 0
+    slope_max: 20
+    land_cover: ["cropland", "orchard"]
+    aspect_preference: null  # No strong preference
+    
+  tam_giac_mach:
+    elevation_min: 800
+    elevation_max: 1500
+    slope_min: 0
+    slope_max: 30
+    land_cover: ["cropland", "grassland"]
+    
+  # ========== JAPAN SPECIES ==========
+  somei_yoshino:
+    elevation_min: 0
+    elevation_max: 500
+    slope_min: 0
+    slope_max: 15
+    land_cover: ["urban_park", "forest"]
+    aspect_preference: null  # No strong preference
+    temperature_accumulation_threshold: 600  # 600°C rule
+    temperature_base: 0  # °C (sum daily temps above 0°C from Feb 1)
+    
+  kawazu_zakura:
+    elevation_min: 0
+    elevation_max: 200
+    slope_min: 0
+    slope_max: 10
+    land_cover: ["riverside", "urban_park"]
+    aspect_preference: null
+    temperature_accumulation_threshold: 400  # Earlier blooming, lower threshold
+    temperature_base: 0
+    
+  # ========== NETHERLANDS SPECIES ==========
+  tulipa_darwin_hybrid:
+    elevation_min: -10  # Below sea level allowed
+    elevation_max: 20
+    slope_min: 0
+    slope_max: 5  # Flat fields
+    land_cover: ["cropland", "botanical_garden"]
+    aspect_preference: null
+    soil_type: ["sandy", "loamy"]  # Well-drained bulb soil
+    soil_ph_min: 6.0
+    soil_ph_max: 7.0
+    
+  hyacinthus_orientalis:
+    elevation_min: -10
+    elevation_max: 20
+    slope_min: 0
+    slope_max: 5
+    land_cover: ["botanical_garden", "cropland"]
+    aspect_preference: null
+    soil_type: ["sandy", "loamy"]
+    soil_ph_min: 6.0
+    soil_ph_max: 7.5
+    
+# Visualization
+visualization:
+  color_palettes:
+    ari_anomaly: ["#fef6e4", "#f3c", "#8b0000"]
+    ndvi: ["#8b0000", "#ffff66", "#006400"]
+    probability: ["#440154", "#31688e", "#35b779", "#fde724"]
+    
+  map_center: [21.5, 104.8]
+  map_zoom: 6
+  
+# Output Configuration
+output:
+  base_dir: "outputs"
+  timeseries_dir: "timeseries"
+  models_dir: "models"
+  predictions_dir: "predictions"
+  hotspots_dir: "hotspots"
+  visualizations_dir: "visualizations"

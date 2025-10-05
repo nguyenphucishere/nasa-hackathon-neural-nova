@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Bloom Prediction System - Ha Giang Buckwheat</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🌸 Flower Bloom Prediction System</h1>
+            <p class="subtitle">Buckwheat - Ha Giang</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Sidebar - Controls -->
+        <aside class="sidebar">
+            <div class="control-panel">
+                <h2>🎛️ Filters</h2>
+                
+                <!-- Flower Species Selector -->
+                <div class="control-group">
+                    <label for="speciesSelect">🌸 Select Flower Species:</label>
+                    <select id="speciesSelect" class="species-select">
+                        <option value="Ha_Giang_TamGiacMach">Buckwheat - Ha Giang</option>
+                        <option value="Moc_Chau_Prunus">Plum Blossom - Moc Chau</option>
+                        <option value="Hoang_Lien_Rhododendron">Rhododendron - Fansipan</option>
+                        <option value="Lao_Cai_Rhododendron">Rhododendron - Lao Cai</option>
+                    </select>
+                </div>
+                
+                <!-- Date Range Selector -->
+                <div class="control-group">
+                    <label>📅 Date Range:</label>
+                    <div class="date-inputs-wrapper">
+                        <div class="date-inputs">
+                            <input type="date" id="dateStart" class="date-input" title="Start Date">
+                            <span class="date-separator">→</span>
+                            <input type="date" id="dateEnd" class="date-input" title="End Date">
+                        </div>
+                        <div class="date-help">📌 Max 30 days</div>
+                    </div>
+                </div>
+                
+                <!-- Date Range Slider -->
+                <div class="control-group">
+                    <label for="dateRangeSlider">🎚️ Select Current Date:</label>
+                    <div class="current-date-display" id="currentDateDisplay">05/10/2025</div>
+                    <input type="range" id="dateRangeSlider" min="0" max="0" value="0" step="1" class="date-range-slider">
+                    <div class="slider-labels">
+                        <span id="sliderStartLabel">05/10/2025</span>
+                        <span id="sliderEndLabel">04/11/2025</span>
+                    </div>
+                </div>
+
+                <!-- Nearby Hotspots -->
+                <div class="nearby-panel" id="nearbyPanel" style="display: none;">
+                    <h3>📍 Nearby Hotspots</h3>
+                    <div class="nearby-navigation">
+                        <button id="prevHotspot" class="nav-btn nav-btn-prev" title="Previous Hotspot">
+                            ← Previous
+                        </button>
+                        <span class="hotspot-counter" id="hotspotCounter">-</span>
+                        <button id="nextHotspot" class="nav-btn nav-btn-next" title="Next Hotspot">
+                            Next →
+                        </button>
+                    </div>
+                    <div id="nearbyList" class="nearby-list">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="stats-panel">
+                    <h3>📊 Statistics</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Points (range):</span>
+                        <span class="stat-value" id="totalPoints">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Visible Points (date):</span>
+                        <span class="stat-value" id="visiblePoints">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Avg Probability:</span>
+                        <span class="stat-value" id="avgProb">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Max Probability:</span>
+                        <span class="stat-value" id="maxProb">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Date:</span>
+                        <span class="stat-value" id="currentDateStat">-</span>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="legend">
+                    <h3>🎨 Color Legend</h3>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #d73027;"></span>
+                        <span>Very High (≥70%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #fc8d59;"></span>
+                        <span>High (60-70%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #fee090;"></span>
+                        <span>Medium (50-60%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #e0f3f8;"></span>
+                        <span>Low (40-50%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #91bfdb;"></span>
+                        <span>Very Low (<40%)</span>
+                    </div>
+                </div>
+
+                <!-- Export Button -->
+                <div class="control-group">
+                    <button id="exportBtn" class="btn-export">
+                        💾 Export Current Data
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Map Container -->
+        <main class="map-section">
+            <div id="map"></div>
+            
+            <!-- Loading Overlay -->
+            <div id="loadingOverlay" class="loading-overlay">
+                <div class="spinner"></div>
+                <p>Loading data...</p>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Details -->
+        <aside class="detail-panel" id="detailPanel">
+            <div class="detail-header">
+                <h2>📍 Point Details</h2>
+                <button class="close-btn" id="closeDetail">&times;</button>
+            </div>
+            <div class="detail-content" id="detailContent">
+                <p class="placeholder">Click on a point on the map to see details</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Chat Popup -->
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <span class="chat-icon">🤖</span>
+                <div class="chat-title">
+                    <h3>AI Travel Assistant</h3>
+                    <p class="chat-status" id="chatStatus">Ready to assist</p>
+                </div>
+            </div>
+            <button class="chat-close-btn" id="closeChatBtn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="chat-context" id="chatContext" style="display: none;">
+            <div class="context-label">📍 Current Point:</div>
+            <div class="context-info" id="contextInfo"></div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-bubble">
+                    <p>Hello! I'm your AI travel assistant. Click on a point on the map, then ask me about routes, best times to visit, or nearby attractions! 🌸</p>
+                </div>
+            </div>
+            
+            <!-- Sample Prompts -->
+            <div class="sample-prompts" id="samplePrompts">
+                <div class="sample-prompts-label">💡 Quick Questions:</div>
+                <button class="sample-prompt-btn" data-prompt="How do I get there from Hanoi?">
+                    🚗 How do I get there from Hanoi?
+                </button>
+                <button class="sample-prompt-btn" data-prompt="What is the best time to visit?">
+                    ⏰ What is the best time to visit?
+                </button>
+                <button class="sample-prompt-btn" data-prompt="What should I bring for the trip?">
+                    🎒 What should I bring for the trip?
+                </button>
+                <button class="sample-prompt-btn" data-prompt="Are there any nearby attractions?">
+                    🗺️ Are there any nearby attractions?
+                </button>
+                <button class="sample-prompt-btn" data-prompt="Recommend a 2-day itinerary">
+                    📅 Recommend a 2-day itinerary
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="chat-input-wrapper">
+                <input type="text" 
+                       id="chatInput" 
+                       class="chat-input" 
+                       placeholder="Ask about travel routes..."
+                       disabled>
+                <button id="sendBtn" class="send-btn" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 8L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Chat Button -->
+    <button class="chat-float-btn" id="chatFloatBtn">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2C7.373 2 2 6.597 2 12.273c0 3.218 1.818 6.077 4.636 7.955v5.09l4.773-2.618c1.182.327 2.436.5 3.727.5 6.627 0 12-4.597 12-10.273S20.627 2 14 2z" fill="white"/>
+        </svg>
+        <span class="chat-badge" id="chatBadge" style="display: none;">!</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Neural Nova Team - NASA Space App Challenge | Dữ liệu từ Sentinel-2 & Earth Engine</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Chart.js for future analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom JS -->
+     <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
