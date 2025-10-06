@@ -27,6 +27,7 @@ A hierarchical two-stage AI system that predicts flower bloom conditions using h
 - Calculates reliability coefficient (KQ) weighted by expert knowledge
 - Accepts only high-confidence predictions (KQ ≥ 0.76)
 - Reduces false positives by 40%
+- For a detailed analysis, refer to our [**Project Report**: *Flower Bloom Prediction System with a Verification Model Based on Environmental Data and Mathematics*](https://model-2-algorithm-for-project.tiiny.site)
 
 ## 📋 System Requirements
 
