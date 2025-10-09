@@ -20,6 +20,7 @@ A hierarchical two-stage AI system that predicts flower bloom conditions using h
 - Trains ensemble models (Random Forest + LSTM) on 60 temporal features
 - Generates 30-day probabilistic forecasts at 500m resolution
 - Identifies initial hotspots using Getis-Ord Gi* spatial statistics
+- For more detail analysis, refer to our  [MODEL 1 METHODOLOGY](./METHODOLOGY.md)*
 
 ### **Model 2: Environmental Validation Layer**
 - Validates Model 1 hotspots with ground-level environmental data
@@ -139,6 +140,18 @@ Hyperspectral_ROI/
 │       ├── config.py              # Configuration manager
 │       └── ee_utils.py            # Earth Engine utilities
 │
+├── web/                    # Interactive web interface
+│   ├── index.html          
+│   ├── app.js              
+│   ├── chatbot.js          # AI chatbot integration
+│   ├── style.css           
+│   ├── config.js.example   # Configuration template
+│   └── *.geojson           # GeoJSON hotspot data files
+│       ├── Ha_Giang_TamGiacMach_hotspots_timeseries.geojson
+│       ├── Hoang_Lien_Rhododendron_hotspots_timeseries.geojson
+│       ├── Lao_Cai_Rhododendron_hotspots_timeseries.geojson
+│       └── Moc_Chau_Prunus_hotspots_timeseries.geojson
+│
 └── outputs/                 # Output results
     ├── timeseries/         # Time series data
     ├── models/             # Trained models
@@ -202,6 +215,7 @@ Hyperspectral_ROI/
 - Static plots (PNG)
 
 ## 🎯 Usage Examples
+***Note**: Check out [USER_GUIDE_FOR_DATA_PROCESSING.md](./USER_GUIDE_FOR_DATA_PROCESSING.md) for more detail in using our application*
 
 ### 1. Add New Area of Interest (AOI)
 
@@ -252,6 +266,7 @@ def add_my_index(self, image: ee.Image) -> ee.Image:
 ```
 
 ## 🐛 Troubleshooting
+***Note**: Check out [USER_GUIDE_FOR_DATA_PROCESSING.md](./USER_GUIDE_FOR_DATA_PROCESSING.md) for more detail in troubleshooting errors*
 
 ### Earth Engine Authentication
 ```powershell
@@ -313,14 +328,7 @@ Reduce `batch_size` in config or decrease `sequence_length`.
 
 Contributions are welcome! Please feel free to submit Pull Requests or create Issues.
 
-### Development Setup
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## � License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 

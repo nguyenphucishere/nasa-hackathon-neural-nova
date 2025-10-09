@@ -1,30 +1,30 @@
 # Scientific Background and Methodology
 
-## 📖 Khung Lý thuyết Khoa học
+## 📖 Scientific Theoretical Framework
 
-### I. Cơ sở Sinh học và Quang phổ
+### I. Biological and Spectral Basis
 
-Hiện tượng nở hoa tạo ra dấu hiệu quang phổ độc đáo do sự xuất hiện của các sắc tố không phải chlorophyll:
+The phenomenon of flower blooming creates unique spectral signatures due to the presence of non-chlorophyll pigments:
 
-#### 1. Anthocyanin (Sắc tố Đỏ/Tím)
-- **Công thức ARI**: `(1/B03) - (1/B05)`
-- **Cơ chế**: Phản xạ mạnh ở vùng xanh lục (~560nm), hấp thụ ở red edge (~705nm)
-- **Ứng dụng**: Hoa màu đỏ, tím, hồng (ví dụ: đào, mận)
+#### 1. Anthocyanin (Red/Purple Pigment)
+- **ARI Formula**: `(1/B03) - (1/B05)`
+- **Mechanism**: Strong reflection in the green region (~560nm), absorption in red edge (~705nm)
+- **Application**: Red, purple, pink flowers (e.g., peach, plum)
 
-#### 2. Carotenoid (Sắc tố Vàng/Cam)
-- **Công thức NYI**: `(NIR - Green) / (NIR + Green)`
-- **Công thức CRI**: `(1/B02) - (1/B05)`
-- **Cơ chế**: Hấp thụ mạnh ở vùng xanh lam, phản xạ vùng vàng-cam
-- **Ứng dụng**: Hoa vàng (tam giác mạch, cải dầu)
+#### 2. Carotenoid (Yellow/Orange Pigment)
+- **NYI Formula**: `(NIR - Green) / (NIR + Green)`
+- **CRI Formula**: `(1/B02) - (1/B05)`
+- **Mechanism**: Strong absorption in the blue region, reflection in yellow-orange region
+- **Application**: Yellow flowers (buckwheat, rapeseed)
 
 #### 3. Chlorophyll (Baseline)
 - **NDVI**: `(NIR - Red) / (NIR + Red)`
 - **EVI**: `2.5 * ((NIR - Red) / (NIR + 6*Red - 7.5*Blue + 1))`
-- **Quan sát**: NDVI **giảm** khi nở hoa do lá bị che phủ bởi hoa
+- **Observation**: NDVI **decreases** during bloom as leaves are covered by flowers
 
-### II. Phương pháp Viễn thám
+### II. Remote Sensing Methodology
 
-#### Sentinel-2 Bands Sử dụng
+#### Sentinel-2 Bands Used
 | Band | Wavelength (nm) | Resolution (m) | Purpose |
 |------|----------------|----------------|---------|
 | B2 (Blue) | 490 | 10 | Carotenoid detection |
@@ -35,33 +35,33 @@ Hiện tượng nở hoa tạo ra dấu hiệu quang phổ độc đáo do sự 
 | B7 (Red Edge) | 783 | 20 | Vegetation structure |
 | B8 (NIR) | 842 | 10 | Vegetation biomass |
 
-#### Tiền xử lý ARD (Analysis Ready Data)
+#### ARD (Analysis Ready Data) Preprocessing
 1. **Cloud Masking**: SCL band + Cloud Probability (<40%)
-2. **Topographic Correction**: C-correction cho địa hình đồi núi
+2. **Topographic Correction**: C-correction for mountainous terrain
 3. **Atmospheric Correction**: Surface Reflectance (SR) products
 
 ### III. Machine Learning Methodology
 
 #### Random Forest
-- **Ưu điểm**: 
+- **Advantages**: 
   - Feature importance analysis
-  - Không cần normalization
+  - No normalization needed
   - Robust to outliers
-- **Nhược điểm**:
-  - Không nắm bắt temporal dependencies
-  - Cần nhiều dữ liệu
+- **Disadvantages**:
+  - Does not capture temporal dependencies
+  - Requires large amounts of data
 
-**Công thức dự đoán**:
+**Prediction Formula**:
 ```
 P(bloom) = (1/N) * Σ(tree_i(X))
 ```
 
 #### LSTM (Long Short-Term Memory)
-- **Ưu điểm**:
-  - Học temporal patterns
-  - Nhớ long-term dependencies
-  - Tốt cho time series
-- **Kiến trúc**:
+- **Advantages**:
+  - Learns temporal patterns
+  - Remembers long-term dependencies
+  - Good for time series
+- **Architecture**:
   - Input: (batch, sequence_length, features)
   - Hidden layers: 128-256 units, 2-3 layers
   - Output: Bloom probability [0, 1]
@@ -77,19 +77,19 @@ h_t = o_t * tanh(C_t)  # Hidden state
 ```
 
 #### GRU (Gated Recurrent Unit)
-- **Ưu điểm**: Đơn giản hơn LSTM, training nhanh hơn
-- **Performance**: Tương đương LSTM cho bloom forecasting
+- **Advantages**: Simpler than LSTM, faster training
+- **Performance**: Comparable to LSTM for bloom forecasting
 
 ### IV. Spatial Statistics
 
 #### Getis-Ord Gi* Statistic
 
-**Công thức**:
+**Formula**:
 ```
 G_i* = (Σ w_{ij} x_j - X̄ Σ w_{ij}) / (S √[(n Σ w_{ij}² - (Σ w_{ij})²) / (n-1)])
 ```
 
-Trong đó:
+Where:
 - `w_{ij}`: spatial weight (inverse distance)
 - `x_j`: bloom probability at location j
 - `X̄`: mean bloom probability
@@ -184,10 +184,10 @@ Trong đó:
 
 | Species | Key Index | Bloom Window | Duration |
 |---------|-----------|--------------|----------|
-| Tam Giác Mạch | NYI, CRI | Oct-Dec | 60 days |
-| Mận Mộc Châu | ARI | Jan-Feb | 14 days |
-| Hoa Ban | ARI | Mar-Apr | 21 days |
-| Đỗ Quyên | ARI, NDRE | Feb-Jun | 28 days |
+| Buckwheat (Tam Giác Mạch) | NYI, CRI | Oct-Dec | 60 days |
+| Plum (Mận Mộc Châu) | ARI | Jan-Feb | 14 days |
+| Bauhinia (Hoa Ban) | ARI | Mar-Apr | 21 days |
+| Rhododendron (Đỗ Quyên) | ARI, NDRE | Feb-Jun | 28 days |
 
 ## 📚 References
 
