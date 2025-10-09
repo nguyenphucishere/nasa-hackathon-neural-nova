@@ -210,11 +210,17 @@ python main.py \
   --top-n 50                        # Number of top hotspots
 ```
 
-### Batch Processing (All AOIs):
+### Batch Processing:
 
 ```bash
 # Run for all areas sequentially
-./START_SERVER_CRONJOB.sh
+./predict_gpu_optimized.bat
+
+# Run for all areas in parallel
+./predict_parallel.bat
+
+# Run for specific flowers
+./predict_flowers.bat
 ```
 
 This will process:

@@ -1,8 +1,4 @@
 #!/bin/bash
-# ========================================
-# GPU-OPTIMIZED SEQUENTIAL PREDICTION
-# Tối ưu hóa cho GPU - chạy tuần tự
-# ========================================
 
 PYTHON=$(which python3)
 TODAY=$(date +%Y-%m-%d)

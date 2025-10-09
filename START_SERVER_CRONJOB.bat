@@ -1,8 +1,4 @@
 @echo off
-REM ========================================
-REM GPU-OPTIMIZED SEQUENTIAL PREDICTION
-REM Tối ưu hóa cho GPU - chạy tuần tự
-REM ========================================
 
 set PYTHON=C:\Users\Admin\anaconda3\envs\plantgpu\python.exe
 
